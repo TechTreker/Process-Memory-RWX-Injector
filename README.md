@@ -26,4 +26,10 @@ gcc processRWXInjector.c -o processRWXInjector.exe
 .\processRWXInjector.exe
 ```
 # Notes
-This program works by gathering all PIDs on a Windows system (Ones that we can obtain a handle to) and examining their memory contents to see which ones have Read, Write, and Execute permissions. Once you select a PID that has RWX memory locations, you can inject your shellcode into that memory region. 
+This program works by gathering all PIDs on a Windows system (Ones that we can obtain a handle to) and examining their memory contents to see which ones have Read, Write, and Execute permissions. Once you select a PID that has RWX memory locations, you can inject your shellcode into that memory region.\
+
+Program in use. Using Windows Sysinternals to confirm memory locations have RWX permissions. `Address 1` is highlighted in blue on vmmap. 
+![Photo](images/RWXComparrison.png)
+
+Injected the shellcode into `code.exe`, or PID 30928 in this demo.
+![Photo](images/RWXCalcPopped.png)
